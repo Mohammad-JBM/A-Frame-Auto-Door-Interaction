@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <script
+    src="https://cdn.jsdelivr.net/gh/aframevr/aframe@d6fa1c3890a15e05cf63a178ebf76d98d1e413f8/dist/aframe-master.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: #ECECEC" embedded shadow="type: pcfsoft" renderer="antialias: true">
+    <!-- Camera -->
+    <a-entity id="rig" camera look-controls wasd-controls="acceleration: 10" position="0 1.6 0"></a-entity>
+
+
+
+    <!-- Automatic Door -->
+    <a-entity id="animated-door" gltf-model="#doorModel" position="0 0 -5" rotation="0 0 0" door-trigger></a-entity>
+
+    <!-- A-DEF -->
+    <a-assets>
+      <a-asset-item id="doorModel" src="./glb/door.glb"></a-asset-item>
+      <audio id="doorSound" src="./audio/door.mp3"></audio>
+    </a-assets>
+  </a-scene>
+  <script src="./js/automatic-door.js"></script>
+</body>
+
+</html>
